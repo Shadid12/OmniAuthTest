@@ -12,7 +12,8 @@ class User < ActiveRecord::Base
   #     user
   #   end
   # end
-  
+
+has_many :comments, dependent: :delete_all
 def self.create_with_omniauth(auth)
   create! do |user|
     user.provider = auth["provider"]
