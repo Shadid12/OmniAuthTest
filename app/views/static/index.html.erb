@@ -1,0 +1,10 @@
+<h1>Index</h1>
+
+<% if current_user %>
+  Welcome <%= current_user.name %>!
+  <%= image_tag current_user.avatar_url %>
+  </br>
+  <%= link_to "Sign Out", sign_out_path  %>
+<% else %>
+  <%= link_to "Sign in ", "/auth/facebook" %>
+<% end %>
